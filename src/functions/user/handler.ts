@@ -1,18 +1,18 @@
-import type { ValidatedEventAPIGatewayProxyEvent } from "@libs/api-gateway";
-import { formatJSONResponse } from "@libs/api-gateway";
-import { middyfy } from "@libs/lambda";
+import type { ValidatedEventAPIGatewayProxyEvent } from '@libs/api-gateway';
+import { formatJSONResponse } from '@libs/api-gateway';
+import { middyfy } from '@libs/lambda';
 
 import {
   BatchWriteItemCommand,
   DynamoDBClient,
-} from "@aws-sdk/client-dynamodb";
-import { User } from "src/models";
-import schema from "./schema";
+} from '@aws-sdk/client-dynamodb';
+import { User } from 'src/models';
+import schema from './schema';
 
-const dynamoDBClient = new DynamoDBClient({ region: "us-east-1" });
+const dynamoDBClient = new DynamoDBClient({ region: 'us-east-1' });
 
 const user: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
-  event
+  event,
 ) => {
   const body = event.body.user as User[];
 
@@ -35,16 +35,16 @@ const user: ValidatedEventAPIGatewayProxyEvent<typeof schema> = async (
 
   const batchRequest = {
     RequestItems: {
-      ["aws_test"]: putRequests,
+      ['aws_test']: putRequests,
     },
   };
   const batchWriteCommand = new BatchWriteItemCommand(batchRequest);
   await dynamoDBClient.send(batchWriteCommand).catch((error) => {
-    console.error("Error:", error);
+    console.error('Error:', error);
   });
 
   return formatJSONResponse({
-    message: "User created succesfully",
+    message: 'User created succesfully',
   });
 };
 

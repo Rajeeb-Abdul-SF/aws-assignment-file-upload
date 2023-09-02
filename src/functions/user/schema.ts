@@ -1,21 +1,23 @@
 export default {
-  type: "object",
+  type: 'object',
   properties: {
     user: {
-      type: "array",
-      itemType: {
-        type: "object",
+      type: 'array',
+      items: {
+        type: 'object',
         properties: {
-          firstname: { type: "string" },
-          lastname: { type: "string" },
-          email: { type: "string" },
-          email2: { type: "string" },
-          profession: { type: "string" },
-          salary: { type: "string" },
-          dob: { type: "string" },
+          id: { type: 'string' },
+          firstname: { type: 'string' },
+          lastname: { type: 'string' },
+          email: { type: 'string' },
+          email2: { type: 'string' },
+          profession: { type: 'string' },
+          salary: { type: 'string' },
+          dob: { type: 'string' },
         },
+        required: ['firstname', 'lastname', 'email'],
       },
     },
   },
-  required: ["user"],
+  required: ['user'],
 } as const;
