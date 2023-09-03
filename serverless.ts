@@ -57,30 +57,6 @@ const serverlessConfiguration: AWS = {
               AttributeName: 'email',
               AttributeType: 'S',
             },
-            // {
-            //   AttributeName: 'lastname',
-            //   AttributeType: 'S',
-            // },
-            // {
-            //   AttributeName: 'email',
-            //   AttributeType: 'S',
-            // },
-            // {
-            //   AttributeName: 'email2',
-            //   AttributeType: 'S',
-            // },
-            // {
-            //   AttributeName: 'profession',
-            //   AttributeType: 'S',
-            // },
-            // {
-            //   AttributeName: 'salary',
-            //   AttributeType: 'S',
-            // },
-            // {
-            //   AttributeName: 'dob',
-            //   AttributeType: 'S',
-            // },
           ],
           KeySchema: [
             {
@@ -91,30 +67,6 @@ const serverlessConfiguration: AWS = {
               AttributeName: 'email',
               KeyType: 'RANGE',
             },
-            // {
-            //   AttributeName: 'lastname',
-            //   KeyType: 'RANGE',
-            // },
-            // {
-            //   AttributeName: 'email',
-            //   KeyType: 'RANGE',
-            // },
-            // {
-            //   AttributeName: 'email2',
-            //   KeyType: 'RANGE',
-            // },
-            // {
-            //   AttributeName: 'profession',
-            //   KeyType: 'RANGE',
-            // },
-            // {
-            //   AttributeName: 'salary',
-            //   KeyType: 'RANGE',
-            // },
-            // {
-            //   AttributeName: 'dob',
-            //   KeyType: 'RANGE',
-            // },
           ],
           ProvisionedThroughput: {
             ReadCapacityUnits: 5,
