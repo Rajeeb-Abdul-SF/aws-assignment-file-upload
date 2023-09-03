@@ -1,12 +1,12 @@
 export default {
-  type: "object",
+  type: 'object',
   properties: {
     file: {
-      type: "object",
+      type: 'object',
       properties: {
-        filename: { type: "string" },
-        mimetype: "string",
-        content: { type: "object", properties: { data: { type: "array" } } },
+        filename: { type: 'string' },
+        mimetype: 'string',
+        content: { type: 'object', properties: { data: { type: 'array' } } },
       },
     },
   },

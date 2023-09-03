@@ -1,10 +1,10 @@
-import { File, HttpError } from "@libs/api-gateway";
+import { File, HttpError } from '@libs/api-gateway';
 
 const isAllowedFileType = (fileName: string) => {
-  const allowedExtensions = [".csv"];
+  const allowedExtensions = ['.csv'];
 
   const fileExtension = fileName.slice(
-    ((fileName.lastIndexOf(".") - 1) >>> 0) + 2
+    ((fileName.lastIndexOf('.') - 1) >>> 0) + 2,
   );
   return allowedExtensions.includes(`.${fileExtension.toLowerCase()}`);
 };
@@ -17,7 +17,7 @@ export const fileTypeChecker = () => {
       const file: File = event.body.file;
 
       if (!isAllowedFileType(file.filename)) {
-        return HttpError(422, "File Type is not supported");
+        return HttpError(422, 'File Type is not supported');
       }
     },
   };
