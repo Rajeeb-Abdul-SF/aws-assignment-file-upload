@@ -38,62 +38,90 @@ const serverlessConfiguration: AWS = {
   },
   resources: {
     Resources: {
-      // MyS3Bucket: {
-      //   Type: "AWS::S3::Bucket",
-      //   Properties: {
-      //     BucketName: "s3-uploaded-files",
-      //   },
-      // },
-      // MyDynamoDBTable: {
-      //   Type: "AWS::DynamoDB::Table",
-      //   Properties: {
-      //     TableName: "aws_test",
-      //     AttributeDefinitions: [
-      //       {
-      //         AttributeName: "id",
-      //         AttributeType: "S",
-      //       },
-      //       {
-      //         AttributeName: "firstname",
-      //         AttributeType: "S",
-      //       },
-      //       {
-      //         AttributeName: "lastname",
-      //         AttributeType: "S",
-      //       },
-      //       {
-      //         AttributeName: "email",
-      //         AttributeType: "S",
-      //       },
-      //       {
-      //         AttributeName: "email2",
-      //         AttributeType: "S",
-      //       },
-      //       {
-      //         AttributeName: "profession",
-      //         AttributeType: "S",
-      //       },
-      //       {
-      //         AttributeName: "salary",
-      //         AttributeType: "S",
-      //       },
-      //       {
-      //         AttributeName: "dob",
-      //         AttributeType: "S",
-      //       },
-      //     ],
-      //     KeySchema: [
-      //       {
-      //         AttributeName: "id",
-      //         KeyType: "HASH",
-      //       },
-      //     ],
-      //     ProvisionedThroughput: {
-      //       ReadCapacityUnits: 5,
-      //       WriteCapacityUnits: 5,
-      //     },
-      //   },
-      // },
+      MyS3Bucket: {
+        Type: 'AWS::S3::Bucket',
+        Properties: {
+          BucketName: 's3-uploaded-files',
+        },
+      },
+      MyDynamoDBTable: {
+        Type: 'AWS::DynamoDB::Table',
+        Properties: {
+          TableName: 'aws_test',
+          AttributeDefinitions: [
+            {
+              AttributeName: 'id',
+              AttributeType: 'S',
+            },
+            {
+              AttributeName: 'email',
+              AttributeType: 'S',
+            },
+            // {
+            //   AttributeName: 'lastname',
+            //   AttributeType: 'S',
+            // },
+            // {
+            //   AttributeName: 'email',
+            //   AttributeType: 'S',
+            // },
+            // {
+            //   AttributeName: 'email2',
+            //   AttributeType: 'S',
+            // },
+            // {
+            //   AttributeName: 'profession',
+            //   AttributeType: 'S',
+            // },
+            // {
+            //   AttributeName: 'salary',
+            //   AttributeType: 'S',
+            // },
+            // {
+            //   AttributeName: 'dob',
+            //   AttributeType: 'S',
+            // },
+          ],
+          KeySchema: [
+            {
+              AttributeName: 'id',
+              KeyType: 'HASH',
+            },
+            {
+              AttributeName: 'email',
+              KeyType: 'RANGE',
+            },
+            // {
+            //   AttributeName: 'lastname',
+            //   KeyType: 'RANGE',
+            // },
+            // {
+            //   AttributeName: 'email',
+            //   KeyType: 'RANGE',
+            // },
+            // {
+            //   AttributeName: 'email2',
+            //   KeyType: 'RANGE',
+            // },
+            // {
+            //   AttributeName: 'profession',
+            //   KeyType: 'RANGE',
+            // },
+            // {
+            //   AttributeName: 'salary',
+            //   KeyType: 'RANGE',
+            // },
+            // {
+            //   AttributeName: 'dob',
+            //   KeyType: 'RANGE',
+            // },
+          ],
+          ProvisionedThroughput: {
+            ReadCapacityUnits: 5,
+            WriteCapacityUnits: 5,
+          },
+        },
+      },
     },
   },
 };
